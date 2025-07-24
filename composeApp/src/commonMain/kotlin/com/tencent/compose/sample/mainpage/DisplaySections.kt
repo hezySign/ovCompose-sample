@@ -19,9 +19,9 @@ package com.tencent.compose.sample.mainpage
 
 import com.tencent.compose.sample.LinearGradientLine
 import com.tencent.compose.sample.MultiTouches
-import com.tencent.compose.sample.mainpage.sectionItem.BouncingBallsApp
 import com.tencent.compose.sample.data.DisplayItem
 import com.tencent.compose.sample.data.DisplaySection
+import com.tencent.compose.sample.mainpage.sectionItem.BouncingBallsApp
 import com.tencent.compose.sample.mainpage.sectionItem.CarouselTransition
 import com.tencent.compose.sample.mainpage.sectionItem.CheckboxExamples
 import com.tencent.compose.sample.mainpage.sectionItem.DialogExamples
@@ -37,6 +37,8 @@ import com.tencent.compose.sample.mainpage.sectionItem.SliderExamples
 import com.tencent.compose.sample.mainpage.sectionItem.SwitchExamples
 import com.tencent.compose.sample.mainpage.sectionItem.TextField2
 import com.tencent.compose.sample.mainpage.sectionItem.TextField3
+import com.tencent.compose.sample.mainpage.sectionItem.ManyViewsPage
+import com.tencent.compose.sample.mainpage.sectionItem.ManyViewsPage2
 import composesample.composeapp.generated.resources.Res
 import composesample.composeapp.generated.resources.balls
 import composesample.composeapp.generated.resources.carousel
@@ -47,6 +49,7 @@ import composesample.composeapp.generated.resources.dog
 import composesample.composeapp.generated.resources.falling
 import composesample.composeapp.generated.resources.gesture
 import composesample.composeapp.generated.resources.gradient
+import composesample.composeapp.generated.resources.layers
 import composesample.composeapp.generated.resources.menu
 import composesample.composeapp.generated.resources.multi_touch
 import composesample.composeapp.generated.resources.progress
@@ -95,7 +98,9 @@ internal fun displaySections(): List<DisplaySection> {
                 DisplayItem("Bouncing Balls", Res.drawable.balls) { BouncingBallsApp() },
                 DisplayItem("Falling Balls", Res.drawable.falling) { FallingBalls() },
                 DisplayItem("DropdownMenu", Res.drawable.menu) { DropdownMenu() },
-                DisplayItem("GradientLine", Res.drawable.gradient) { LinearGradientLine() }
+                DisplayItem("GradientLine", Res.drawable.gradient) { LinearGradientLine() },
+                DisplayItem("ManyViewsPage", Res.drawable.layers) { ManyViewsPage(1500) },
+                DisplayItem("ManyViewsPage2", Res.drawable.layers) { ManyViewsPage2(1500) }
             )
         )
     )
