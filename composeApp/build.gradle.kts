@@ -69,6 +69,11 @@ kotlin {
             defFile(file("src/ohosArm64Main/cinterop/resource.def"))
             includeDirs(file("src/ohosArm64Main/cinterop/include"))
         }
+
+        val test725 by main.cinterops.creating {
+            defFile(file("src/ohosArm64Main/cinterop/test725.def"))
+            includeDirs(file("src/ohosArm64Main/cinterop/include"))
+        }
     }
 
     sourceSets {
