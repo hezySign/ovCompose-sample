@@ -13,7 +13,7 @@ include_directories(${NATIVERENDER_ROOT_PATH}
 
 find_package(skikobridge)
 
-add_library(entry SHARED napi_init.cpp)
+add_library(entry SHARED napi_init.cpp test725.cpp)
 target_link_libraries(entry PUBLIC libace_napi.z.so)
 target_link_libraries(entry PUBLIC libdeviceinfo_ndk.z.so)
 target_link_libraries(entry PUBLIC librawfile.z.so)
