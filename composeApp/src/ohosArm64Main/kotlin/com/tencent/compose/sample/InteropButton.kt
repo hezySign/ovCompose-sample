@@ -46,9 +46,9 @@ import platform.test725.testNum
 internal fun InteropButton() {
     Column(Modifier.fillMaxWidth().fillMaxHeight().padding(30.dp)) {
         Button(onClick = {
-            println("testNum call start:")
+            println("KN: testNum call start:")
             var res = testNum(10)
-            println("testNum result: $res")
+            println("KN: testNum result: $res")
         }) {
             Text("Append Text")
         }

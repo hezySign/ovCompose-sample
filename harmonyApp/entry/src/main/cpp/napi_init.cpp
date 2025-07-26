@@ -18,6 +18,15 @@
 #include "libkn_api.h"
 #include "napi/native_api.h"
 #include <rawfile/raw_file_manager.h>
+#include "hilog/log.h"
+
+#define LOG_TAG "MY_TAG"   // 全局tag宏，标识模块日志tag
+
+void callKotlinMethodTest() {
+    OH_LOG_INFO(LOG_APP, "KN: callKotlinMethodTest: start");
+    int num = kotlin_function(10);
+    OH_LOG_INFO(LOG_APP, "KN: callKotlinMethodTest: end num=%{public}d", num);
+}
 
 static napi_value Add(napi_env env, napi_callback_info info)
 {
@@ -58,6 +67,7 @@ static napi_value InitResourceManager(napi_env env, napi_callback_info info) {
     auto kt = libkn_symbols();
     kt->kotlin.root.com.tencent.compose.initResourceManager(manager);
 
+    callKotlinMethodTest();
     napi_value result;
     napi_create_int32(env, 0, &result);
     return result;

@@ -111,6 +111,7 @@ extern void androidx_compose_ui_arkui_ArkUIViewController_setRootView(void* cont
 extern void androidx_compose_ui_arkui_ArkUIViewController_setUIContext(void* controllerRef, void* uiContext);
 extern void androidx_compose_ui_arkui_ArkUIViewController_setXComponentRender(void* controllerRef, void* render);
 extern void androidx_compose_ui_arkui_init(void* env, void* exports);
+extern libkn_KInt kotlin_function(libkn_KInt input);
 extern void* MainArkUIViewController(void* env);
 
 typedef struct {
@@ -293,6 +294,12 @@ typedef struct {
                   libkn_KInt (*com_tencent_compose_sample_mainpage_sectionItem_DropdownItem$stableprop_getter______________)();
                   libkn_KInt (*com_tencent_compose_sample_mainpage_sectionItem_Game$stableprop_getter______________)();
                   libkn_KInt (*com_tencent_compose_sample_mainpage_sectionItem_PieceData$stableprop_getter______________)();
+                  libkn_KInt (*com_tencent_compose_sample_mainpage_sectionItem_DropdownItem$stableprop_getter_______________)();
+                  libkn_KInt (*com_tencent_compose_sample_mainpage_sectionItem_Game$stableprop_getter_______________)();
+                  libkn_KInt (*com_tencent_compose_sample_mainpage_sectionItem_PieceData$stableprop_getter_______________)();
+                  libkn_KInt (*com_tencent_compose_sample_mainpage_sectionItem_DropdownItem$stableprop_getter________________)();
+                  libkn_KInt (*com_tencent_compose_sample_mainpage_sectionItem_Game$stableprop_getter________________)();
+                  libkn_KInt (*com_tencent_compose_sample_mainpage_sectionItem_PieceData$stableprop_getter________________)();
                 } sectionItem;
               } mainpage;
               void* (*get_nativeResourceManager)();
@@ -304,12 +311,15 @@ typedef struct {
             libkn_KInt (*com_tencent_compose_OHOSPlatform$stableprop_getter_)();
             libkn_KInt (*com_tencent_compose_Greeting$stableprop_getter__)();
             libkn_KInt (*com_tencent_compose_OHOSPlatform$stableprop_getter__)();
-            void* (*MainArkUIViewController_)(void* env);
             libkn_KInt (*com_tencent_compose_Greeting$stableprop_getter___)();
             libkn_KInt (*com_tencent_compose_OHOSPlatform$stableprop_getter___)();
-            void (*initResourceManager)(void* resourceManager);
+            libkn_KInt (*kotlinFunction)(libkn_KInt input);
+            void* (*MainArkUIViewController_)(void* env);
             libkn_KInt (*com_tencent_compose_Greeting$stableprop_getter____)();
             libkn_KInt (*com_tencent_compose_OHOSPlatform$stableprop_getter____)();
+            void (*initResourceManager)(void* resourceManager);
+            libkn_KInt (*com_tencent_compose_Greeting$stableprop_getter_____)();
+            libkn_KInt (*com_tencent_compose_OHOSPlatform$stableprop_getter_____)();
           } compose;
         } tencent;
       } com;
