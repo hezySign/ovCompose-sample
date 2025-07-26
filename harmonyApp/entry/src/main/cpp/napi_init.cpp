@@ -28,6 +28,14 @@ void callKotlinMethodTest() {
     OH_LOG_INFO(LOG_APP, "KN: callKotlinMethodTest: end num=%{public}d", num);
 }
 
+void print_result(int x) {
+    OH_LOG_INFO(LOG_APP, "KN: print_result: num=%{public}d", x);
+}
+
+void callKotlinCallbackTest() {
+    kotlin_callback(21, (void *)print_result); // 输出: "Result: 42"
+}
+
 static napi_value Add(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
@@ -68,6 +76,8 @@ static napi_value InitResourceManager(napi_env env, napi_callback_info info) {
     kt->kotlin.root.com.tencent.compose.initResourceManager(manager);
 
     callKotlinMethodTest();
+    callKotlinCallbackTest();
+
     napi_value result;
     napi_create_int32(env, 0, &result);
     return result;
