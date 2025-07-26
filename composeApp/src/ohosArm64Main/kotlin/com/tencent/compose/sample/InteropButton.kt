@@ -38,8 +38,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.napi.asString
 import androidx.compose.ui.napi.js
 import androidx.compose.ui.unit.dp
-import kotlinx.cinterop.ExperimentalForeignApi
-import platform.test725.testNum
+import kotlinx.cinterop.*
+import platform.test725.*
 
 @OptIn(ExperimentalForeignApi::class)
 @Composable
@@ -52,5 +52,27 @@ internal fun InteropButton() {
         }) {
             Text("Append Text")
         }
+
+        Button(onClick = { testMemScoped() }) {
+            Text("testMemScoped")
+        }
+    }
+}
+
+@OptIn(ExperimentalForeignApi::class)
+fun testMemScoped() {
+    memScoped {
+        // 分配内存（包括 null 终止符）
+        val buffer = allocArray<ByteVar>(5) // "abcd" + '\0'
+
+        // 写入数据
+        buffer[0] = 'a'.code.toByte()
+        buffer[1] = 'b'.code.toByte()
+        buffer[2] = 'c'.code.toByte()
+        buffer[3] = 'd'.code.toByte()
+        buffer[4] = 0 // Null 终止符
+
+        // 传递指针给 C
+        print_string(buffer)
     }
 }

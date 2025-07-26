@@ -6,6 +6,7 @@ extern "C" {
 #endif
 
 int testNum(int num);
+void print_string(char* msg);
 
 #ifdef __cplusplus
 };

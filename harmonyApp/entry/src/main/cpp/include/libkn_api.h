@@ -305,6 +305,7 @@ typedef struct {
               } mainpage;
               void* (*get_nativeResourceManager)();
               void (*set_nativeResourceManager)(void* set);
+              void (*testMemScoped)();
             } sample;
             libkn_KInt (*com_tencent_compose_Greeting$stableprop_getter)();
             libkn_KInt (*com_tencent_compose_OHOSPlatform$stableprop_getter)();
